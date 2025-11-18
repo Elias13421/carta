@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta Interactiva</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0e6f6;
+      font-family: Arial, sans-serif;
+    }
+
+    .carta {
+      width: 300px;
+      height: 200px;
+      background: #fff;
+      border: 2px solid #8e44ad;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+
+    .carta:hover {
+      transform: scale(1.05);
+    }
+
+    .mensaje {
+      display: none;
+      text-align: center;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+
+    .abierta .mensaje {
+      display: block;
+    }
+
+    .abierta .carta-contenido {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="carta" id="carta">
+    <div class="carta-contenido">Haz click para abrir 💌</div>
+    <div class="mensaje">✨ Esfuerzate en vivir manzana, se que llegaras lejos ✨</div>
+  </div>
+
+  <script>
+    const carta = document.getElementById('carta');
+    carta.addEventListener('click', () => {
+      carta.classList.toggle('abierta');
+    });
+  </script>
+</body>
+</html>
